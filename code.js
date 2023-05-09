@@ -6,7 +6,6 @@ function render() {
     let output = ''
 
     const thisMonth = months[new Date().getMonth()]
-    // const thisMonth = months[11]
     for (let month of months) {
         const active = thisMonth == month ? 'active' : ''
         output += `<div class=${active}>${month}</div>`
@@ -72,10 +71,10 @@ function getCurrentDay() {
     return day;
 }
 
-function renderDays() {
-    const currentDay = getCurrentDay();
+function renderDays(year, month) {
+    const currentDay = getCurrentDay(year, month);
 
-    const days = getDaysOfMonth(2023, 5)
+    const days = getDaysOfMonth(year, month)
     let output = ''
 
     for (let day of days) {
@@ -91,10 +90,30 @@ function renderDays() {
 
     return output
 }
-app2.querySelector('days').innerHTML = renderDays()
+app2.querySelector('days').innerHTML = renderDays(year, month)
 
-function renderDate(mes = 0, ano = 0) {    
-    const date = months[month += (mes)] + ' ' + (year += ano)
+function renderDate(mes = 0, ano = 0) {
+    month += (mes)
+    year += ano
+
+    if (month == 0) {
+        month += mes
+        year += ano
+    }
+    
+    if (month < 0) {
+        month = 12
+        year -= 1
+    }
+
+    if (month > 12) {
+        month = 1
+        year += 1
+    }
+    console.log(months[month - 1], month, year)
+    
+    const date = months[month] + ' ' + (year)
+    app2.querySelector('days').innerHTML = renderDays(year, month)
     return date
 }
 
