@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@phosphor-icons/web"></script> <!--  Icones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> <!--Calendario-->
     <link rel="stylesheet" href="style.css">
     <title>DatePicker</title>
 </head>
@@ -15,11 +16,25 @@
         <header>
             <i id="btnLeft" class="ph-bold ph-caret-left"></i>
             <span></span>
-            <i id="btnRight"class="ph-bold ph-caret-right"></i>
+            <i id="btnRight" class="ph-bold ph-caret-right"></i>
         </header>
         <months></months>
-        <days></days>
+
     </div>
+
+    <div id="app2" class="box">
+        <header>
+            <i id="btnLeftm" class="ph-bold ph-caret-left"></i>
+            <span></span>
+            <i id="btnRightm" class="ph-bold ph-caret-right"></i>
+        </header>
+        <main>
+            <daysWeek></daysWeek>
+            <days></days>
+        </main>
+        </div>
+    </div>
+
 
     <script src="code.js"></script>
 </body>
