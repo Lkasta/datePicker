@@ -36,17 +36,30 @@ body {
 
 #app header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     font-weight: 700;
+    color: #333;
 }
 
-#app main {
+#app header > i {
+    padding: 16px;
+    border-radius: 50%;
+    color: #666;
+    cursor: pointer;
+}
+
+#app header > i:hover {
+    background: #ECE0FD;
+}
+
+#app months {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px
 }
 
-main >div {
+months >div {
     color: #666666;
     width: 82px;
     height: 40px;
@@ -60,12 +73,12 @@ main >div {
     cursor: pointer;
 }
 
-main > div:hover {
+months > div:hover {
     background-color: #ece0fd;
     border-radius: 6px;
 }
 
-main > div.active {
+months > div.active {
     background: #6200EE;
     border-radius: 8px;
     color: #fff;
@@ -73,7 +86,7 @@ main > div.active {
     position: relative;
 }
 
-main > div.active::after {
+months > div.active::after {
     content: '';
     width: 4px;
     height: 4px;
@@ -82,4 +95,3 @@ main > div.active::after {
     position: absolute;
     bottom: 6px;
 }
-
